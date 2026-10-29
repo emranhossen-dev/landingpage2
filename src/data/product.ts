@@ -16,6 +16,10 @@ export const site = {
   website: "gadgetbro.shop",
 };
 
+// GitHub Pages-এর মতো সাবপাথে হোস্ট হলে NEXT_PUBLIC_BASE_PATH সেট করতে হয়
+// (ওয়ার্কফ্লোতে দেওয়া আছে)। সাধারণ হোস্টিংয়ে (Vercel ইত্যাদি) খালি থাকবে।
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const product = {
   name: "2-in-1 Mini Star Projector Night Light",
   nameBn: "মিনি স্টার প্রজেক্টর নাইট লাইট",
@@ -29,10 +33,10 @@ export const product = {
   soldCount: "1,200+",
   badge: "বেস্ট সেলার",
   images: [
-    { src: "/images/product-1.jpg", alt: "Star Projector — galaxy projection" },
-    { src: "/images/product-2.jpg", alt: "Star Projector — room view" },
-    { src: "/images/product-3.jpg", alt: "Star Projector — product close-up" },
-    { src: "/images/product-4.jpg", alt: "Star Projector — night light mode" },
+    { src: `${basePath}/images/product-1.jpg`, alt: "Star Projector — galaxy projection" },
+    { src: `${basePath}/images/product-2.jpg`, alt: "Star Projector — room view" },
+    { src: `${basePath}/images/product-3.jpg`, alt: "Star Projector — product close-up" },
+    { src: `${basePath}/images/product-4.jpg`, alt: "Star Projector — night light mode" },
   ],
   highlights: [
     "12টি প্রজেকশন ইফেক্ট — Galaxy, Moon ও Star",
